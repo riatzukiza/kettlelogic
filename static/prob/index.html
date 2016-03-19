@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>WebMIDIAPIShim</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<!-- polyfill -->
+	<script src="/MIDI/inc/shim/Base64.js" type="text/javascript"></script>
+	<script src="/MIDI/inc/shim/Base64binary.js" type="text/javascript"></script>
+	<script src="/MIDI/inc/shim/WebAudioAPI.js" type="text/javascript"></script>
+	<!-- midi.js package -->
+	<script src="/MIDI/js/midi/audioDetect.js" type="text/javascript"></script>
+	<script src="/MIDI/js/midi/gm.js" type="text/javascript"></script>
+	<script src="/MIDI/js/midi/loader.js" type="text/javascript"></script>
+	<script src="/MIDI/js/midi/plugin.audiotag.js" type="text/javascript"></script>
+	<script src="/MIDI/js/midi/plugin.webaudio.js" type="text/javascript"></script>
+	<script src="/MIDI/js/midi/plugin.webmidi.js" type="text/javascript"></script>
+	<!-- utils -->
+	<script src="/MIDI/js/util/dom_request_xhr.js" type="text/javascript"></script>
+	<script src="/MIDI/js/util/dom_request_script.js" type="text/javascript"></script>
+  <script src = "/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io();
+    socket.on("change",function() {
+        location.reload();
+    })
+  </script>
+  <script src="/WebMIDIAPIShim/lib/WebMIDIAPI.js"></script>
+  <script src="main.js"></script>
+  <script src="markovChain.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../stylesheets/reset.css">
+  <link rel="stylesheet" type="text/css" href="../../stylesheets/prism.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+  <div id="container" class="cf">
+    <div id="inputs"></div>
+    <div id="outputs"></div>
+  </div>
+  <h4>incoming midi events:</h4>
+  <button onclick = "generateLanguageNieve()">
+    build niave language
+  </button>
+  <button onclick = "generateCompositeLanguage()">
+    build composite language
+  </button>
+
+  <button onclick = "playNaiveRandomSong(songlang,1000 )">
+    play random 
+  </button>
+  <button onclick = "playCompositeRandomSong(songlang,1000 )">
+    play composite random 
+  </button>
+
+  <script>
+  </script>
+</body>
+</html>
