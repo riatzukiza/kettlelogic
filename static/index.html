@@ -1,27 +1,102 @@
+
 <!DOCTYPE html>
-<html xmlns = "http://www.w3.org/1999/xhtml">
+<html>
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<!-- polyfill -->
-	<script src="./MIDI/inc/shim/Base64.js" type="text/javascript"></script>
-	<script src="./MIDI/inc/shim/Base64binary.js" type="text/javascript"></script>
-	<script src="./MIDI/inc/shim/WebAudioAPI.js" type="text/javascript"></script>
-	<!-- midi.js package -->
-	<script src="./MIDI/js/midi/audioDetect.js" type="text/javascript"></script>
-	<script src="./MIDI/js/midi/gm.js" type="text/javascript"></script>
-	<script src="./MIDI/js/midi/loader.js" type="text/javascript"></script>
-	<script src="./MIDI/js/midi/plugin.audiotag.js" type="text/javascript"></script>
-	<script src="./MIDI/js/midi/plugin.webaudio.js" type="text/javascript"></script>
-	<script src="./MIDI/js/midi/plugin.webmidi.js" type="text/javascript"></script>
-	<!-- utils -->
-	<script src="./MIDI/js/util/dom_request_xhr.js" type="text/javascript"></script>
-	<script src="./MIDI/js/util/dom_request_script.js" type="text/javascript"></script>
-  <!-- midi shim -->
-  <script src = "../WebMIDIAPIShim/lib/WebMIDIAPI.min.js"></script>
+    <style>
+        html{
+            margin: auto, auto;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            font-family:    'Roboto', sans-serif;
+            height: 800px;
+            width: 800px;
+        }  
+        ui-panels,
+        ui-panels ui-corner,
+        ui-panels ui-edge,
+        ui-panels ui-panel
+        {
+            position: fixed;
+            display: block;
+            transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s, background-color 0.3s;
+            transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+            overflow: hidden;
+        }
+        ui-panels ui-corner
+        {
+            background-color: rgba(255,0,255,0.20);
+        }
+        ui-panels ui-edge
+        {
+            background-color: rgba(255,0,255,0.20);
+        }
+        ui-panels ui-panel
+        {
+            background-color: rgba(0,0,0,0.5);
+        }
+        ui-panels ui-corner[active],
+        ui-panels ui-edge[active]
+        {
+            background-color: rgba(255,0,255,1);
+        }
+        ui-panels ui-corner[drag],
+        ui-panels ui-edge[drag]
+        {
+            background-color: rgba(0,255,0,1);
+        }
+        
+    </style>
+  <meta charset="utf-8">
+  <title>WebMIDIAPIShim</title>
   <script src = "/socket.io/socket.io.js"></script>
-  <script>var socket = io();</script>
-  <script type="text/javascript" src="main.js"> </script>
+  <script src = "mousetrap.js"></script>
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+
+	<!-- polyfill -->
+	<script src="/MIDI/inc/shim/Base64.js" type="text/javascript"></script>
+	<script src="/MIDI/inc/shim/Base64binary.js" type="text/javascript"></script>
+	<script src="/MIDI/inc/shim/WebAudioAPI.js" type="text/javascript"></script>
+	<!-- midi.js package -->
+	<script src="/MIDI/js/midi/audioDetect.js" type="text/javascript"></script>
+	<script src="/MIDI/js/midi/gm.js" type="text/javascript"></script>
+	<script src="/MIDI/js/midi/loader.js" type="text/javascript"></script>
+	<script src="/MIDI/js/midi/plugin.audiotag.js" type="text/javascript"></script>
+
+	<script src="/MIDI/js/midi/plugin.webaudio.js" type="text/javascript"></script>
+	<script src="/MIDI/js/midi/plugin.webmidi.js" type="text/javascript"></script>
+	<!-- utils -->
+	<script src="/MIDI/js/util/dom_request_xhr.js" type="text/javascript"></script>
+	<script src="/MIDI/js/util/dom_request_script.js" type="text/javascript"></script>
+  <script src = "/socket.io/socket.io.js"></script>
+  <script src="../WebMIDIAPIShim/lib/WebMIDIAPI.js"></script>
+  <script src="/lib/index.js"></script>
+  <script>
+
+    var socket = io.connect("/files");
+    socket.on("change",function(path) {
+          location.reload();
+    })
+  </script>
+<style>
+#messages-container {
+  position:relative;
+  padding:3px; 
+  overflow-y:scroll;
+  height:90%;
+  border-width:1px;
+  border-style:solid;
+}
+#messages {
+  overflow:auto;
+}
+</style>
+  <script src = "./index.js"></script>
 </head>
 <body>
+
 </body>
 </html>

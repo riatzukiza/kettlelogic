@@ -1,0 +1,2 @@
+console.log('foobar');
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFub255bW91cy53aXNwIl0sIm5hbWVzIjpbImNvbnNvbGUiLCJsb2ciXSwibWFwcGluZ3MiOiJBQUFDQSxPQUFBLENBQVFDLEdBQVQsQ0FBYSxRQUFiIiwic291cmNlc0NvbnRlbnQiOlsiKGNvbnNvbGUubG9nIFwiZm9vYmFyXCIpIl19

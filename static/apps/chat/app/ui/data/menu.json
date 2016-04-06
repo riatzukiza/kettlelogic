@@ -1,0 +1,50 @@
+{
+    "type"      : "MenuBar", 
+    "options"   : null, 
+    "children"  :
+    [
+        {
+            "type"      : "DropDown", 
+            "options"   : {"name":"file"}, 
+            "children"  :
+            [
+                {"type":"MenuItem", "options":{"action":null, "name":"new",   "shortcut":"ctrl-n"}},
+                {"type":"MenuItem", "options":{"action":null, "name":"open",  "shortcut":"ctrl-o"}},
+                {"type":"MenuItem", "options":{"action":null, "name":"save",  "shortcut":"ctrl-s"}},
+                {"type":"MenuItem", "options":{"action":null, "name":"close", "shortcut":"ctrl-x"}}
+            ]
+        }, 
+        {
+            "type"      : "DropDown", 
+            "options"   : {"name":"edit"}, 
+            "children"  :
+            [
+                {"type":"MenuItem", "options":{"action":null, "name":"undo",    "shortcut":"ctrl-z"} },
+                {"type":"MenuItem", "options":{"action":null, "name":"redo",    "shortcut":"ctrl-y"} },
+                {"type":"MenuItem", "options":{"action":null, "name":"cut",     "shortcut":"ctrl-x"} },
+                {"type":"MenuItem", "options":{"action":null, "name":"copy",    "shortcut":"ctrl-c"} },
+                {"type":"MenuItem", "options":{"action":null, "name":"paste",   "shortcut":"ctrl-v"} },
+                {"type":"MenuItem", "options":{"action":null, "name":"find",    "shortcut":"ctrl-f"} },
+                {"type":"MenuItem", "options":{"action":null, "name":"replace", "shortcut":"ctrl-r"} }
+            ]
+        }, 
+        {
+            "type"      : "DropDown", 
+            "options"   : {"name":"view"}, 
+            "children"  :
+            [
+                {"type":"MenuItem", "options":{"action":null, "name":"fullscreen", "shortcut":"f11"} },
+                {"type":"MenuItem", "options":{"action":null, "name":"split",      "shortcut":""} }
+            ]
+        }, 
+        {
+            "type"      : "DropDown", 
+            "options"   : {"name":"help"}, 
+            "children"  :
+            [
+                {"type":"MenuItem", "options":{"action":null, "name":"documentation", "shortcut":""} },
+                {"type":"MenuItem", "options":{"action":null, "name":"about",         "shortcut":""} }
+            ]
+        }
+    ]
+}

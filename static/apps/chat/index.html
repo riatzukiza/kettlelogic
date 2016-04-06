@@ -1,0 +1,21 @@
+  <script src = "mousetrap.js"></script>
+<style>
+#messages-container {
+  position:relative;
+  padding:3px; 
+  overflow-y:scroll;
+  height:80vh;
+  width:80vw;
+  border-width:1px;
+  border-style:solid;
+}
+#messages {
+  overflow:auto;
+}
+</style>
+    <div id="users">
+    </div>
+    <div id="messages-container" >
+      <div id="messages"></div>
+    </div>
+    <input onkeyup = "sendMessage(event)" id="message-box">CONTENT</textarea>

@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./ui/icon/icon.css" />
+    <link rel="stylesheet" href="./ui/menu/mainmenu.css" />
+    <style>
+        html{
+            background-color: black;
+            margin: auto, auto;
+        }
+        body{
+            background-color: rgb(32,32,32);
+            margin: 0;
+            padding: 0;
+            font-family:    'Roboto', sans-serif;
+            height: 800px;
+            width: 800px;
+        }  
+        ui-panels,
+        ui-panels ui-corner,
+        ui-panels ui-edge,
+        ui-panels ui-panel
+        {
+            position: fixed;
+            display: block;
+            transition: width 200ms, height 200ms, top 200ms, left 200ms, background-color 200ms;
+            transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+            overflow: hidden;
+        }
+        ui-panels ui-corner
+        {
+            background-color: rgba(255,0,255,0.20);
+        }
+        ui-panels ui-edge
+        {
+            background-color: rgba(255,0,255,0.20);
+        }
+        ui-panels ui-panel
+        {
+            background-color: rgba(0,0,0,0.5);
+        }
+        ui-panels ui-corner[active],
+        ui-panels ui-edge[active]
+        {
+            background-color: rgba(255,0,255,1);
+        }
+        ui-panels ui-corner[drag],
+        ui-panels ui-edge[drag]
+        {
+            background-color: rgba(0,255,0,1);
+        }
+        
+    </style>
+    <script>
+        require("babel-polyfill");
+        require("babel-register")({"presets":["es2015-node"]});
+        const app = require('./main.js');
+    </script>
+</head>
+
+<body>
+    
+</body>
+
+</html>

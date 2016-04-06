@@ -1,0 +1,40 @@
+  <style>
+  #messages-container {
+    position:relative;
+    padding:3px; 
+    overflow-y:scroll;
+    height:80vh;
+    width:80vw;
+    border-width:1px;
+    border-style:solid;
+  }
+  #messages {
+    overflow:auto;
+  }
+  </style>
+  <table>
+    <tr><td>email:</td><td><input id="email" type="text"> <td></tr>
+    <tr><td>password:</td><td><input id="password" type="text"> <td></tr>
+    <tr>
+      <td>
+        <button id="signup-button" onclick="window.Interface.login('#email','#password')">
+          sign up
+        </button>
+      </td>
+      <td>
+        <button id="login-button"
+                onclick="window.Interface.login('#email','#password',
+                         function(res) {
+                            if(res.success) {
+                                return window.Apps.change(window.mainPanel,'chat',
+                                    console.log.bind(console,'success'))
+                            } else {
+                                console.log('fail');
+                            }
+                         })">
+          login
+        </button>
+      </td>
+    </tr>
+  </table>
+  <div id="signup-error"></div>

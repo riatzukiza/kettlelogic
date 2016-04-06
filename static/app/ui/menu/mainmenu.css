@@ -1,0 +1,128 @@
+ui-menu-bar
+{
+    display: block;     
+    background-color: rgb(8,8,8);
+    overflow: hidden;
+    -webkit-app-region: drag;
+    -webkit-user-select: none;
+}
+ui-menu-bar ui-control-icon
+{
+    display: block;
+    float: right;
+    height: 28px;
+    width: 28px;
+    z-index: 2;
+    -webkit-app-region: no-drag;
+}
+ui-menu-bar ui-control-icon i
+{
+    display:        block;
+    height:         28px;
+    width:          28px;
+    line-height:    28px;
+    color:        #636162;
+    text-align:     center;
+    font-size:      10px;
+}
+ui-menu-bar control-icon:hover i
+{
+    color: #b8b0b7;
+}
+ui-drop-down
+{
+    display:        inline-block;
+    overflow:       hidden;
+    z-index: 2;
+    -webkit-app-region: no-drag;
+}
+ui-drop-down .label
+{
+    display:        block;
+    color:        #b8b0b7;
+    padding:        0 8px;
+    font-size:      16px;
+    border:         none;
+    cursor:         pointer;
+    height:         28px;
+    line-height:    28px;
+    border-radius: 4px 4px 0 0;
+}
+ui-drop-down:hover .label
+{
+    background-color: rgba(70,58,69,0.75);
+    height:         28px;
+    z-index:        1;
+}
+ui-drop-down .list
+{
+    display:    none;
+    position:   absolute;
+    min-width:  160px;
+    z-index:    2;
+}
+ui-drop-down:hover .list 
+{
+    display: block;
+}
+ui-drop-down .list ui-menu-item:first-child
+{
+    border-radius: 0 4px 0 0;
+}
+ui-drop-down .list ui-menu-item:last-child
+{
+    border-radius: 0 0 4px 4px;
+}
+ui-drop-down .list ui-menu-item
+{
+    background-color: rgba(70,58,69,0.75);
+}
+ui-drop-down .list ui-menu-item:hover
+{
+    background-color: rgba(94,80,92,0.75);
+}
+ui-drop-down .list ui-menu-item
+{
+    position:       relative;
+    display:        block;
+    height:         28px;
+    width:          100%;
+    color:        #b8b0b7;
+    text-decoration: none;
+    overflow:       hidden;
+}
+
+ui-drop-down .list ui-menu-item .label
+{
+    position:       absolute;
+    top:            0;
+    bottom:         0;
+    left:           28px;
+    right:          0;
+    padding:        0 8px;
+    background-color: transparent;
+}
+ui-drop-down .list ui-menu-item i
+{
+    position:       absolute;  
+    top:            0;
+    left:           0;
+    height:         28px;
+    width:          28px;
+    line-height:    28px;
+    font-size:      16px;
+    text-align:     center;
+    background-color: transparent;
+}
+ui-drop-down .list ui-menu-item .shortcut
+{
+    line-height:    28px;
+    display:        inline;
+    position:       absolute;
+    right:          4px;
+    top:            2px;
+    font-size:      8px;
+    z-index:        2;
+    line-height:    14px;
+    background-color: transparent;
+}

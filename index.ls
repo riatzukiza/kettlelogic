@@ -1,4 +1,6 @@
 (include "../lib/lib/macros.ls")
+(var lib (require "lib"))
+
 (var child_process (require "child_process"))
 (var Path (require "path"))
 (var fork child_process.fork)
@@ -21,19 +23,23 @@
       (defun ~name (dir scope) ~rest...))
 
 (var child (fork "main.js"))
+(defun maybeRestart ()
+  (unless child.exiting
+      (child.once "exit" (lambda ()
+                           (set child (fork "main.js")))
+    (set child.exiting true)
+    (setTimeout (lambda () (child.kill)) 1500))))
 (defun restartApp (path)
   (var ext (Path.extname path))
-  (print "extension" ext)
+  (print "bin file changed" path)
   (when (= ext ".js")
-    (if (! child.exiting)
-        (child.once "exit" (lambda ()
-                             (set child (fork "main.js")))))
-    (set child.exiting true)
-    (setTimeout (lambda () (child.kill)) 1500)))
+    (print "recompileing" path)
+    (maybeRestart)))
 
 (defDirHandler watchInode (dir.watch))
 (defDirHandler listenForChanges
   (dir.on "change" restartApp))
+(child.once "error" maybeRestart)
 
 ( -> (Inode.get "./bin")
      (.then Monad)
